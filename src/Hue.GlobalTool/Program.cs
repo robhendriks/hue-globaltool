@@ -27,7 +27,10 @@ public static class Program
 
         rootCommand.SetHandler(_ => DoRootCommand());
 
-        rootCommand.AddLightCommand();
+        rootCommand
+            .AddBridgeCommand()
+            .AddLightCommand();
+
 
         return new CommandLineBuilder(rootCommand);
     }

@@ -29,8 +29,8 @@ public static class LightCommandExtensions
                     var apiResponse = await mediator.Send(
                         new GetLightListQuery(),
                         invocationContext.GetCancellationToken());
-                    
-                    AnsiConsole.Write(new JsonText(JsonSerializer.Serialize(apiResponse)));
+
+                    // TODO: write to console
                 })
         };
     }
@@ -53,6 +53,8 @@ public static class LightCommandExtensions
                     var apiResponse = await mediator.Send(
                         getLightQuery,
                         invocationContext.GetCancellationToken());
+
+                    // TODO: write to console
                 })
         };
 
@@ -98,6 +100,8 @@ public static class LightCommandExtensions
                     var apiResponse = await mediator.Send(
                         updateLightCommand,
                         invocationContext.GetCancellationToken());
+
+                    // TODO: write to console
                 })
         };
 
@@ -109,7 +113,7 @@ public static class LightCommandExtensions
         return lightUpdateCommand;
     }
 
-    public static void AddLightCommand(this RootCommand rootCommand)
+    public static RootCommand AddLightCommand(this RootCommand rootCommand)
     {
         var lightCommand = new Command("light");
 
@@ -124,5 +128,8 @@ public static class LightCommandExtensions
 
         // Register root command
         rootCommand.AddCommand(lightCommand);
+
+
+        return rootCommand;
     }
 }
