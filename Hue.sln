@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hue.Common", "src\Hue.Common\Hue.Common.csproj", "{E1C0887C-5653-4C6E-BB82-3DC5CFEA8821}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Misc", "Misc", "{7D2526DF-0D35-4B76-9E63-F7964C49AF3A}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		global.json = global.json
+		.gitattributes = .gitattributes
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hue.GlobalTool", "src\Hue.GlobalTool\Hue.GlobalTool.csproj", "{A739B463-B65B-4289-B497-73FF77894A30}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E1C0887C-5653-4C6E-BB82-3DC5CFEA8821}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1C0887C-5653-4C6E-BB82-3DC5CFEA8821}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1C0887C-5653-4C6E-BB82-3DC5CFEA8821}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1C0887C-5653-4C6E-BB82-3DC5CFEA8821}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A739B463-B65B-4289-B497-73FF77894A30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A739B463-B65B-4289-B497-73FF77894A30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A739B463-B65B-4289-B497-73FF77894A30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A739B463-B65B-4289-B497-73FF77894A30}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
