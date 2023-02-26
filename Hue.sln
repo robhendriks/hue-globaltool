@@ -11,6 +11,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Misc", "Misc", "{7D2526DF-0
 		global.json = global.json
 		.gitattributes = .gitattributes
 		.editorconfig = .editorconfig
+		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hue.GlobalTool", "src\Hue.GlobalTool\Hue.GlobalTool.csproj", "{A739B463-B65B-4289-B497-73FF77894A30}"
