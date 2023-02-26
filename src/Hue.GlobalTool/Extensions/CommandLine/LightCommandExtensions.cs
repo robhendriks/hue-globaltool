@@ -12,6 +12,7 @@ using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Spectre.Console;
+using Spectre.Console.Json;
 
 public static class LightCommandExtensions
 {
@@ -23,16 +24,13 @@ public static class LightCommandExtensions
             Handler = CommandHandler.Create<InvocationContext, IHost>(
                 async (invocationContext, host) =>
                 {
-                    var mediator = host.Services.GetService<IMediator>();
+                    var mediator = host.Services.GetService<IMediator>()!;
 
-                    var apiResponse = await mediator!.Send(
+                    var apiResponse = await mediator.Send(
                         new GetLightListQuery(),
                         invocationContext.GetCancellationToken());
-
-                    if (apiResponse != null)
-                    {
-                        AnsiConsole.Write(apiResponse.Data.ToTable());
-                    }
+                    
+                    AnsiConsole.Write(new JsonText(JsonSerializer.Serialize(apiResponse)));
                 })
         };
     }
@@ -50,32 +48,11 @@ public static class LightCommandExtensions
             Handler = CommandHandler.Create<InvocationContext, IHost, GetLightQuery>(
                 async (invocationContext, host, getLightQuery) =>
                 {
-                    var mediator = host.Services.GetService<IMediator>();
+                    var mediator = host.Services.GetService<IMediator>()!;
 
-                    var apiResponse = await mediator!.Send(
+                    var apiResponse = await mediator.Send(
                         getLightQuery,
                         invocationContext.GetCancellationToken());
-
-                    var getLight = apiResponse?.Data.FirstOrDefault();
-                    if (getLight != null)
-                    {
-                        if (getLightQuery.Output == Output.Table)
-                        {
-                            AnsiConsole.Write(getLight.ToTable());
-                        }
-                        else
-                        {
-                            Console.WriteLine(JsonSerializer.Serialize(getLight, new JsonSerializerOptions
-                            {
-                                WriteIndented = true
-                            }));
-                        }
-
-                        return 0;
-                    }
-
-                    AnsiConsole.Write(new Markup("[red]Not found.[/]"));
-                    return 1;
                 })
         };
 
@@ -116,9 +93,9 @@ public static class LightCommandExtensions
             Handler = CommandHandler.Create<InvocationContext, IHost, UpdateLightCommand>(
                 async (invocationContext, host, updateLightCommand) =>
                 {
-                    var mediator = host.Services.GetService<IMediator>();
+                    var mediator = host.Services.GetService<IMediator>()!;
 
-                    await mediator!.Send(
+                    var apiResponse = await mediator.Send(
                         updateLightCommand,
                         invocationContext.GetCancellationToken());
                 })

@@ -1,9 +1,10 @@
 ﻿namespace Hue.GlobalTool.Feature.Lights.Commands.UpdateLight;
 
+using Common.Domain;
 using Hue.Common.Abstractions;
 using MediatR;
 
-public class UpdateLightCommandHandler : IRequestHandler<UpdateLightCommand, Unit>
+public class UpdateLightCommandHandler : IRequestHandler<UpdateLightCommand, HueApiResponse<ResourceIdentifier>>
 {
     private readonly IHueLightService _lightService;
 
@@ -12,13 +13,12 @@ public class UpdateLightCommandHandler : IRequestHandler<UpdateLightCommand, Uni
         _lightService = lightService;
     }
 
-    public async Task<Unit> Handle(UpdateLightCommand request, CancellationToken cancellationToken)
+    public Task<HueApiResponse<ResourceIdentifier>> Handle(UpdateLightCommand request,
+        CancellationToken cancellationToken)
     {
-        await _lightService.PutAsync(
+        return _lightService.PutAsync(
             request.Id,
             request.CreatePutLight(),
             cancellationToken);
-
-        return Unit.Value;
     }
 }

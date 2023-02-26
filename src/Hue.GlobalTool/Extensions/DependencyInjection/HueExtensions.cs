@@ -13,7 +13,8 @@ public static class HueExtensions
             .AddSingleton<HueApiClientOptions>(services
                 => new HueApiClientOptions(
                     services.GetService<ILogger>()!,
-                    new Uri("https://192.168.1.118")))
+                    new Uri("https://192.168.1.118"), // TODO: load from config?
+                    TimeSpan.FromSeconds(5)))
             .AddSingleton<IHueApiClient, HueApiClient>()
             .AddSingleton<IHueLightService, HueLightService>();
     }

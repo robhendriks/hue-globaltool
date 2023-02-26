@@ -14,8 +14,8 @@ public class GetLightListQueryHandler : IRequestHandler<GetLightListQuery, HueAp
         _lightService = lightService;
     }
 
-    public async Task<HueApiResponse<GetLight>> Handle(GetLightListQuery request, CancellationToken cancellationToken)
+    public Task<HueApiResponse<GetLight>> Handle(GetLightListQuery request, CancellationToken cancellationToken)
     {
-        return await _lightService.GetAllAsync(cancellationToken);
+        return _lightService.GetAllAsync(cancellationToken);
     }
 }

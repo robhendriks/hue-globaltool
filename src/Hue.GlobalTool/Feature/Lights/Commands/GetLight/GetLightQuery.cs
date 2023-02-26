@@ -2,7 +2,8 @@
 
 using Hue.Common.Domain;
 using Hue.Common.Domain.Lights;
-using Hue.GlobalTool.Enums;
+using Enums;
 using MediatR;
 
+// ReSharper disable once ClassNeverInstantiated.Global
 public record GetLightQuery(string Id, Output Output) : IRequest<HueApiResponse<GetLight>>;

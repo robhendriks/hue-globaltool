@@ -35,7 +35,8 @@ public class HueApiClient : IHueApiClient
             DefaultRequestHeaders =
             {
                 {"hue-application-key", "QhQ9L7S-u9zELshxZy0iik-74QEK-MCQeJXlRFPS"}
-            }
+            },
+            Timeout = _options.Timeout
         };
     }
 
@@ -54,8 +55,6 @@ public class HueApiClient : IHueApiClient
 
             httpResponseMessage.EnsureSuccessStatusCode();
 
-            Console.WriteLine(await httpResponseMessage.Content.ReadAsStringAsync());
-            
             apiResponse = await httpResponseMessage.Content.ReadFromJsonAsync<HueApiResponse<TResponse>>(
                 DefaultJsonSerializerOptions,
                 cancellationToken);
