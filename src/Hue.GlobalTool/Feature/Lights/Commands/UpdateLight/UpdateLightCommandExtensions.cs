@@ -1,6 +1,6 @@
-﻿namespace Hue.GlobalTool.Application.Lights.Commands.UpdateLight;
+﻿namespace Hue.GlobalTool.Feature.Lights.Commands.UpdateLight;
 
-using Common.Domain.Lights;
+using Hue.Common.Domain.Lights;
 
 public static class UpdateLightCommandExtensions
 {

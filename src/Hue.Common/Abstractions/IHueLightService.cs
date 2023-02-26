@@ -5,6 +5,9 @@ using Domain.Lights;
 
 public interface IHueLightService
 {
-    Task<HueApiResponse<GetLight>?> Get(string id, CancellationToken cancellationToken);
-    Task Put(string id, PutLight putLight, CancellationToken cancellationToken);
+    Task<HueApiResponse<GetLight>> GetAsync(string id, CancellationToken cancellationToken);
+    Task<HueApiResponse<GetLight>> GetAllAsync(CancellationToken cancellationToken);
+
+    Task<HueApiResponse<ResourceIdentifier>>
+        PutAsync(string id, PutLight putLight, CancellationToken cancellationToken);
 }

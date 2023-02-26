@@ -1,7 +1,12 @@
 ﻿namespace Hue.Common.Domain;
 
-public class HueApiResponse<T>
+using System.Text.Json.Serialization;
+
+public class HueApiResponse<TData>
 {
+    [JsonPropertyName("errors")]
     public IReadOnlyCollection<object> Errors { get; set; } = Array.Empty<object>();
-    public IReadOnlyCollection<T> Data { get; set; } = Array.Empty<T>();
+    
+    [JsonPropertyName("data")]
+    public IReadOnlyCollection<TData> Data { get; set; } = Array.Empty<TData>();
 }

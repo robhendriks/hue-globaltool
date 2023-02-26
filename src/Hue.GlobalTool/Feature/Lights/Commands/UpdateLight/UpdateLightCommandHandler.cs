@@ -1,6 +1,6 @@
-﻿namespace Hue.GlobalTool.Application.Lights.Commands.UpdateLight;
+﻿namespace Hue.GlobalTool.Feature.Lights.Commands.UpdateLight;
 
-using Common.Abstractions;
+using Hue.Common.Abstractions;
 using MediatR;
 
 public class UpdateLightCommandHandler : IRequestHandler<UpdateLightCommand, Unit>
@@ -14,7 +14,7 @@ public class UpdateLightCommandHandler : IRequestHandler<UpdateLightCommand, Uni
 
     public async Task<Unit> Handle(UpdateLightCommand request, CancellationToken cancellationToken)
     {
-        await _lightService.Put(
+        await _lightService.PutAsync(
             request.Id,
             request.CreatePutLight(),
             cancellationToken);
