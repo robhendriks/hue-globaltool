@@ -1,4 +1,4 @@
-﻿namespace Hue.GlobalTool.Extensions.CommandLine;
+﻿namespace Hue.GlobalTool.Extensions;
 
 using System.CommandLine;
 using System.Numerics;

@@ -1,13 +1,13 @@
 ﻿namespace Hue.GlobalTool.Feature.Lights.Extensions;
 
 using System.CommandLine;
-using CommandLine;
-using GlobalTool.Extensions.CommandLine;
+using CommandLine.CQRS;
 using Commands.GetLight;
 using Commands.GetLightList;
 using Commands.UpdateLight;
 using Common.Domain;
 using Common.Domain.Lights;
+using GlobalTool.Extensions;
 
 public static class LightCommandLineExtensions
 {
@@ -16,7 +16,7 @@ public static class LightCommandLineExtensions
         return new Command("list")
         {
             Description = "List lights",
-            Handler = MediatorCommandHandler.Create<GetLightListQuery, GetLight>()
+            Handler = MediatorCommandHandler.CreateReadHandler<GetLightListQuery, GetLight>()
         };
     }
 
@@ -30,7 +30,7 @@ public static class LightCommandLineExtensions
         var lightShowCommand = new Command("show")
         {
             Description = "Show light properties",
-            Handler = MediatorCommandHandler.Create<GetLightQuery, GetLight>()
+            Handler = MediatorCommandHandler.CreateReadHandler<GetLightQuery, GetLight>()
         };
 
         lightShowCommand.AddOption(idOption);
@@ -67,7 +67,7 @@ public static class LightCommandLineExtensions
         var lightUpdateCommand = new Command("update")
         {
             Description = "Update light properties",
-            Handler = MediatorCommandHandler.Create<UpdateLightCommand, ResourceIdentifier>()
+            Handler = MediatorCommandHandler.CreateWriteHandler<UpdateLightCommand, ResourceIdentifier>()
         };
 
         lightUpdateCommand.AddOption(idOption);

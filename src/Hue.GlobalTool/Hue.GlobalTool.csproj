@@ -14,6 +14,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Hue.CommandLine.CQRS\Hue.CommandLine.CQRS.csproj" />
     <ProjectReference Include="..\Hue.CommandLine.Rendering\Hue.CommandLine.Rendering.csproj" />
     <ProjectReference Include="..\Hue.Common.ApiClient\Hue.Common.ApiClient.csproj" />
     <ProjectReference Include="..\Hue.Common.Services\Hue.Common.Services.csproj" />
@@ -26,11 +27,6 @@
     <PackageReference Include="Spectre.Console.Json" Version="0.46.0" />
     <PackageReference Include="System.CommandLine" Version="2.0.0-beta4.22272.1" />
     <PackageReference Include="System.CommandLine.Hosting" Version="0.4.0-alpha.22272.1" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="CommandLine\Rendering" />
-    <Folder Include="Feature\Lights\CommandLine\Rendering" />
   </ItemGroup>
 
 </Project>

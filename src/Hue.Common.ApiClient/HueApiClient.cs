@@ -78,6 +78,7 @@ public class HueApiClient : IHueApiClient
             var httpResponseMessage = await httpClient.PutAsJsonAsync(
                 requestUri,
                 request,
+                DefaultJsonSerializerOptions,
                 cancellationToken);
 
             // httpResponseMessage.EnsureSuccessStatusCode();
