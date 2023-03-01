@@ -1,8 +1,8 @@
 ﻿namespace Hue.GlobalTool.Feature.Lights.Commands.GetLightList;
 
-using Common.Abstractions;
 using Common.Domain;
 using Common.Domain.Lights;
+using Common.Services.Abstractions;
 using MediatR;
 
 public class GetLightListQueryHandler : IRequestHandler<GetLightListQuery, HueApiResponse<GetLight>>

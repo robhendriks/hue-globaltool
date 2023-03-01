@@ -1,7 +1,7 @@
 ﻿namespace Hue.GlobalTool.Feature.Lights.Commands.GetLight;
 
-using Hue.Common.Domain;
-using Hue.Common.Domain.Lights;
+using Common.Domain;
+using Common.Domain.Lights;
 using Enums;
 using MediatR;
 

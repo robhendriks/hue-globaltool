@@ -1,8 +1,9 @@
-﻿namespace Hue.Common;
+﻿namespace Hue.Common.Services;
 
-using Abstractions;
 using Domain;
 using Domain.Lights;
+using Abstractions;
+using ApiClient.Abstractions;
 
 public class HueLightService : IHueLightService
 {

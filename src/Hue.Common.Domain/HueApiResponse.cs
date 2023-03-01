@@ -5,8 +5,8 @@ using System.Text.Json.Serialization;
 public class HueApiResponse<TData>
 {
     [JsonPropertyName("errors")]
-    public IReadOnlyCollection<object> Errors { get; set; } = Array.Empty<object>();
-    
+    public IReadOnlyCollection<HueApiError> Errors { get; set; } = Array.Empty<HueApiError>();
+
     [JsonPropertyName("data")]
     public IReadOnlyCollection<TData> Data { get; set; } = Array.Empty<TData>();
 }

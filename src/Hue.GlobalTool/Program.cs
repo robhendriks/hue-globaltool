@@ -4,8 +4,11 @@ using System.CommandLine;
 using System.CommandLine.Builder;
 using System.CommandLine.Hosting;
 using System.CommandLine.Parsing;
-using Extensions.CommandLine;
-using Extensions.DependencyInjection;
+using Common.ApiClient;
+using Common.ApiClient.Extensions;
+using Common.Services.Extensions;
+using Feature.Lights.Extensions;
+using Hue.CommandLine.Rendering.Extensions;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
@@ -28,9 +31,7 @@ public static class Program
         rootCommand.SetHandler(_ => DoRootCommand());
 
         rootCommand
-            .AddBridgeCommand()
             .AddLightCommand();
-
 
         return new CommandLineBuilder(rootCommand);
     }
@@ -55,7 +56,11 @@ public static class Program
                         });
 
                         // Configure Hue
-                        services.AddHue();
+                        services
+                            .AddHueApiClient(_ =>
+                                new HueApiClientOptions(new Uri("https://192.168.1.118"), TimeSpan.FromSeconds(5)))
+                            .AddHueServices()
+                            .AddHueCommandLineRendering();
                     });
                 })
             .UseDefaults()

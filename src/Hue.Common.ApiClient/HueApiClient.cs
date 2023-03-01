@@ -1,11 +1,10 @@
-﻿namespace Hue.Common;
+﻿namespace Hue.Common.ApiClient;
 
 using System.Net.Http.Json;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using Abstractions;
 using Domain;
-using Microsoft.Extensions.Logging;
 
 public class HueApiClient : IHueApiClient
 {
@@ -53,7 +52,7 @@ public class HueApiClient : IHueApiClient
                 requestUri,
                 cancellationToken);
 
-            httpResponseMessage.EnsureSuccessStatusCode();
+            // httpResponseMessage.EnsureSuccessStatusCode();
 
             apiResponse = await httpResponseMessage.Content.ReadFromJsonAsync<HueApiResponse<TResponse>>(
                 DefaultJsonSerializerOptions,
@@ -61,7 +60,7 @@ public class HueApiClient : IHueApiClient
         }
         catch (HttpRequestException exception)
         {
-            _options.Logger.LogError(exception, "GET operation failed.");
+            // TODO: handle exceptions
         }
 
         return apiResponse ?? new HueApiResponse<TResponse>();
@@ -81,7 +80,7 @@ public class HueApiClient : IHueApiClient
                 request,
                 cancellationToken);
 
-            httpResponseMessage.EnsureSuccessStatusCode();
+            // httpResponseMessage.EnsureSuccessStatusCode();
 
             apiResponse = await httpResponseMessage.Content.ReadFromJsonAsync<HueApiResponse<TResponse>>(
                 DefaultJsonSerializerOptions,
@@ -89,7 +88,7 @@ public class HueApiClient : IHueApiClient
         }
         catch (HttpRequestException exception)
         {
-            _options.Logger.LogError(exception, "PUT operation failed.");
+            // TODO: handle exceptions
         }
 
         return apiResponse ?? new HueApiResponse<TResponse>();

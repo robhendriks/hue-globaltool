@@ -1,4 +1,4 @@
-﻿namespace Hue.Common.Abstractions;
+﻿namespace Hue.Common.Services.Abstractions;
 
 using Domain;
 using Domain.Lights;

@@ -1,4 +1,4 @@
-﻿namespace Hue.Common.Abstractions;
+﻿namespace Hue.Common.ApiClient.Abstractions;
 
 using Domain;
 

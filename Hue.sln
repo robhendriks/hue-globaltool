@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hue.Common", "src\Hue.Common\Hue.Common.csproj", "{E1C0887C-5653-4C6E-BB82-3DC5CFEA8821}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Misc", "Misc", "{7D2526DF-0D35-4B76-9E63-F7964C49AF3A}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
@@ -16,6 +14,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Misc", "Misc", "{7D2526DF-0
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hue.GlobalTool", "src\Hue.GlobalTool\Hue.GlobalTool.csproj", "{A739B463-B65B-4289-B497-73FF77894A30}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hue.CommandLine.Rendering", "src\Hue.CommandLine.Rendering\Hue.CommandLine.Rendering.csproj", "{4415E91D-4B3F-4F78-B674-8601C28CE419}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hue.Common.ApiClient", "src\Hue.Common.ApiClient\Hue.Common.ApiClient.csproj", "{5D7000DC-DBD6-4138-8830-13B428987EFC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hue.Common.Domain", "src\Hue.Common.Domain\Hue.Common.Domain.csproj", "{BFD3D042-D6D0-4F1B-8BEE-8A58FFF519AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hue.Common.Services", "src\Hue.Common.Services\Hue.Common.Services.csproj", "{DDE35D8B-0F6A-42D7-BA55-401E85EFC63D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,13 +31,25 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E1C0887C-5653-4C6E-BB82-3DC5CFEA8821}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E1C0887C-5653-4C6E-BB82-3DC5CFEA8821}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E1C0887C-5653-4C6E-BB82-3DC5CFEA8821}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E1C0887C-5653-4C6E-BB82-3DC5CFEA8821}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A739B463-B65B-4289-B497-73FF77894A30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A739B463-B65B-4289-B497-73FF77894A30}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A739B463-B65B-4289-B497-73FF77894A30}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A739B463-B65B-4289-B497-73FF77894A30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4415E91D-4B3F-4F78-B674-8601C28CE419}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4415E91D-4B3F-4F78-B674-8601C28CE419}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4415E91D-4B3F-4F78-B674-8601C28CE419}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4415E91D-4B3F-4F78-B674-8601C28CE419}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D7000DC-DBD6-4138-8830-13B428987EFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D7000DC-DBD6-4138-8830-13B428987EFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D7000DC-DBD6-4138-8830-13B428987EFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D7000DC-DBD6-4138-8830-13B428987EFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFD3D042-D6D0-4F1B-8BEE-8A58FFF519AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFD3D042-D6D0-4F1B-8BEE-8A58FFF519AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFD3D042-D6D0-4F1B-8BEE-8A58FFF519AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFD3D042-D6D0-4F1B-8BEE-8A58FFF519AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDE35D8B-0F6A-42D7-BA55-401E85EFC63D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDE35D8B-0F6A-42D7-BA55-401E85EFC63D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDE35D8B-0F6A-42D7-BA55-401E85EFC63D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDE35D8B-0F6A-42D7-BA55-401E85EFC63D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

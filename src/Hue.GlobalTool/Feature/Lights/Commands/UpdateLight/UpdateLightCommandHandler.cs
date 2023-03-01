@@ -1,7 +1,7 @@
 ﻿namespace Hue.GlobalTool.Feature.Lights.Commands.UpdateLight;
 
 using Common.Domain;
-using Hue.Common.Abstractions;
+using Common.Services.Abstractions;
 using MediatR;
 
 public class UpdateLightCommandHandler : IRequestHandler<UpdateLightCommand, HueApiResponse<ResourceIdentifier>>

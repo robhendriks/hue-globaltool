@@ -1,8 +1,8 @@
-﻿namespace Hue.Common.Domain.Lights;
+﻿namespace Hue.Common.Domain;
 
 using System.Text.Json.Serialization;
 
-public class GetLightMetadata
+public class Metadata
 {
     [JsonPropertyName("name")]
     public string Name { get; set; } = null!;

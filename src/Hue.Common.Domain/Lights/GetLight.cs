@@ -11,5 +11,5 @@ public class GetLight
     public string Id { get; set; } = null!;
 
     [JsonPropertyName("metadata")]
-    public GetLightMetadata Metadata { get; set; } = null!;
+    public Metadata Metadata { get; set; } = null!;
 }
